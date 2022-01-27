@@ -4,10 +4,11 @@
 {% block content %}
 
 <h1>This page is {{ title }}</h1>
-<form action="add" method="post">
-    {% csrf_token %}
+<form action="add" method="get">
+    <!-- {% csrf_token %} -->
     First: <input type="text" name="a">
     Second: <input type="text" name="b">
+
     <input type="submit" value="Add">
 </form>
 {% endblock %}
