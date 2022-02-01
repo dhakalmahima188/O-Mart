@@ -23,5 +23,8 @@
         <input type="email" id="email" name="email"><br>
        <br> <input type ="submit" value="Submit" ><br>
       </form>
+      {% for msg in messages%}
+      <h3>{{msg}}</h3>
+      {% endfor %}
 </body>
 </html>
