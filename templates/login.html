@@ -1,13 +1,15 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{%static 'styles/register.css' %}">
     <title>register</title>
 </head>
 <body>
-   
+<!--    
     <form action="login" method="POST">
         {% csrf_token %}
         <br>
@@ -19,6 +21,31 @@
         <input type="password" id="password" name="password"><br>
         <br> <input type ="submit" value="Submit" ><br>
       </form>
+ -->
+
+
+      <div class="user">
+        <header class="user__header">
+            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3219/logo.svg" alt="" />
+            <h1 class="user__title">Fill the Login Form</h1>
+        </header>
+        
+        <form class="form" action=login method='POST'>
+          {% csrf_token %}
+         
+            <div class="form__group">
+                <input type="text" placeholder="Username" class="form__input" name="username" />
+            </div>
+            
+          
+            <div class="form__group">
+                <input type="password" placeholder="Password" class="form__input" name="password"/>
+            </div>
+            
+            <input  class="btn" type="submit">
+        </form>
+    </div>
+
       {% for msg in messages%}
       <h3>{{msg}}</h3>
       {% endfor %}
